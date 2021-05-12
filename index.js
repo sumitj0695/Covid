@@ -75,13 +75,30 @@ function mobileShare() {
 }
 
 function mobileShare2() {
+    
+//     const share = async function(shareimg, shareurl, sharetitle, sharetext) {
+//     try {
+//       const response = await fetch(shareimg);
+//       const blob = await response.blob();
+//       const file = new File([blob], 'rick.jpg', {type: blob.type});
+
+//       await navigator.share({
+//         url: shareurl,
+//         title: sharetitle,
+//         text: sharetext,
+//         files: [file]
+//       });
+//     } catch (err) {
+//       console.log(err.name, err.message);
+//     }
+//   };
     fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
   .then(function(response) {
     return response.blob()
   })
   .then(function(blob) {
 
-    var file = new File([blob], "https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg", {type: 'image/jpg'});
+    var file = new File([blob], "https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg", {type: 'blob.type'});
     var filesArray = [file];
 
     if(navigator.canShare && navigator.canShare({ files: filesArray })) {
@@ -97,5 +114,24 @@ function mobileShare2() {
        else {
         console.log("Your system doesn't support sharing files.");
       }
+  }
+}
+        
+const shareNow = async () => {
+  let imageResponse = await window.fetch('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
+  let imageBuffer = await imageResponse.arrayBuffer();
+  let fileArray = [new File([imageBuffer], "File Name", {
+    type: "image/png",
+    lastModified: Date.now()
+  })];
+  if(window.navigator && window.navigator.canShare && window.navigator.canShare({files: fileArray})){
+    navigator.share({
+      files: fileArray,
+      title: 'Title',
+      text: 'Text to show'
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
   }
 }
