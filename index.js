@@ -103,4 +103,22 @@ function mobileShare2() {
         console.log("Your system doesn't support sharing files.");
       }
     });
+    fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
+  .then(function(response) {
+    return response.blob()
+  })
+  .then(function(blob) {
+
+    var file = new File([blob], "https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg", {type: 'image/jpg'});
+    var filesArray = [file];
+
+    if(navigator.canShare && navigator.canShare({ files: filesArray })) {
+      navigator.share({
+        text: 'Hey',
+        files: filesArray,
+        title: 'No Title',
+        url: 'https://sumitj0695.github.io/Covid/'
+      });
+    }
+  }
 }
