@@ -117,7 +117,7 @@ function mobileShare2() {
   }
 }
         
-function shareNow = async () => {
+async function shareNow() {
   let imageResponse = await window.fetch('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
   let imageBuffer = await imageResponse.arrayBuffer();
   let fileArray = [new File([imageBuffer], "File Name", {
