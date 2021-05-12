@@ -77,4 +77,13 @@ function shareNow(fileName) {
   });
 }
 
+function whatsappShare() {
+    window.plugins.socialsharing.shareViaWhatsApp(  
+        "Hey There!!",  
+        "images/Covid_Care.png",  
+        "https://sumitj0695.github.io/Covid/",  
+        [function(result) {alert('success'); console.log(result)}],  
+        [function(result) {alert('error'); console.log(result)}]); 
+}
+
         
