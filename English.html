@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      property="og:image"
+      content="https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500,normal"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      href="https://khatabook-assets.s3.amazonaws.com/static/images/index/favicon-kb.svg"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Covid Care</title>
+  </head>
+
+  <body>
+    <div class="container-fluid green-box banner">
+      <div class="heading">Get vaccinated to defeat COVID-19!</div>
+
+      <div class="subheading">
+        "Get yourself and your loved ones vaccinated to protect yourselves
+        against the coronavirus. With vaccines, we can win!"
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <!-- Fold 2 -->
+      <div class="container fold2">
+        <div class="fold2-title">How do vaccines protect you?</div>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold2-pic1.svg" height="40px" width="40px" />
+          </div>
+          <div class="col fold2-text">
+            Vaccines boost your immunity and help your body fight the virus
+            better
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold2-pic2.svg" height="40px" width="40px" />
+          </div>
+          <div class="col fold2-text">
+            They reduce the risk of spreading the virus to your contacts
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold2-pic3.svg" height="40px" width="40px" />
+          </div>
+          <div class="col fold2-text">
+            They help in avoiding serious complications even if you get the
+            virus
+          </div>
+        </div>
+      </div>
+
+      <!-- Fold 3 -->
+
+      <div class="container fold3">
+        <div class="fold3-title d-flex justify-content-center">
+          How to get the vaccine?
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div class="badge bg-success rounded-pill">1</div>
+            <div class="list-text">
+              Register/Sign In on
+              <a href="https://www.cowin.gov.in" target="_blank"
+                >cowin.gov.in
+              </a>
+              using a Photo ID proof
+            </div>
+            <!-- <div class="light-blue-box"></div> -->
+            <img class="images" src="images/fold3-pic1.png" width="40px" />
+          </li>
+          <li class="list-group-item">
+            <div class="badge bg-success rounded-pill">2</div>
+            <div class="list-text">
+              You can add up to 4 members, using the same mobile number
+            </div>
+            <img class="images" src="images/fold3-pic2.png" width="40px" />
+          </li>
+          <li class="list-group-item">
+            <div class="badge bg-success rounded-pill">3</div>
+            <div class="list-text">
+              Search for vaccination centres using PIN or District and book slot
+            </div>
+            <img class="images" src="images/fold3-pic3.png" width="40px" />
+          </li>
+          <li class="list-group-item">
+            <div class="badge bg-success rounded-pill">4</div>
+            <div class="list-text">
+              Carry the Photo ID proof you used while registering to the
+              vaccination centre
+            </div>
+            <img class="images" src="images/fold3-pic4.png" width="40px" />
+          </li>
+        </ul>
+        <div class="fold3-footer">
+          <div class="row justify-content-between">
+            <div class="col-8 text">Share this information with others</div>
+            <div class="col-4 icons">
+              <a
+                href="whatsapp://send?text=Covid care"
+                data-action="share/whatsapp/share"
+                target="_blank"
+              >
+                <img src="./images/whatsapp.svg" style="margin-right: 10px" />
+              </a>
+
+              <img id="simpleshare" src="./images/share.svg"
+              onclick="mobileShare()"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fold 4 -->
+
+      <div class="container fold4">
+        <div class="fold4-title justify-content-center">
+          Where else you can register
+        </div>
+        <div class="row justify-content-center fold4-images">
+          <div class="col-4">
+            <a onclick="Aarogya()">
+              <img class="images" src="images/Aarogya.png" />
+            </a>
+          </div>
+          <div class="col-4">
+            <a onclick="Umang()">
+              <img class="images" src="images/Umang.png" />
+            </a>
+          </div>
+          <div class="col-4">
+            <a onclick="Cowin()">
+              <img class="images" src="images/Cowin.png" />
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4 subtext">Aarogya Setu</div>
+          <div class="col-4 subtext">Umang</div>
+          <div class="col-4 subtext">Cowin</div>
+        </div>
+      </div>
+
+      <!-- Fold 5 -->
+
+      <div class="container fold5">
+        <div class="fold2-title col">Post vaccination</div>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold5-pic1.png" height="40px" />
+          </div>
+          <div class="col fold2-text">
+            Any discomfort is normal. Don't panic and consult a doctor
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold5-pic2.png" height="40px" />
+          </div>
+          <div class="col fold2-text">
+            Remember to get the second dose of the vaccine
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold5-pic3.png" height="40px" />
+          </div>
+          <div class="col fold2-text">
+            Continue to wear masks, maintain social distancing and sanitize your
+            hands regularly
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold5-pic4.png" height="40px" />
+          </div>
+          <div class="col fold2-text">Do not go out, unless necessary</div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <img src="./images/fold5-pic5.png" height="40px" />
+          </div>
+          <div class="col fold2-text">Encourage others to get vaccinated</div>
+        </div>
+      </div>
+      <div class="message">
+        <img src="images/Banner-bottom.svg" width="100%" />
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="footer">
+      <a href="https://selfregistration.cowin.gov.in/" target="_blank">
+        <button type="button" class="register btn btn-primary">
+          REGISTER ON COWIN
+        </button>
+      </a>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
