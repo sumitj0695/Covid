@@ -109,6 +109,7 @@ function shareNow() {
 
     var file = new File([fileBuffer], "File Name", {type: 'image/jpeg'});
     var filesArray = [file];
+            console.log("filesArray", filesArray);
 
     if(navigator.canShare && navigator.canShare({ files: filesArray })) {
       navigator.share({
