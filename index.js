@@ -75,23 +75,6 @@ function mobileShare() {
 }
 
 function mobileShare2() {
-    
-//     const share = async function(shareimg, shareurl, sharetitle, sharetext) {
-//     try {
-//       const response = await fetch(shareimg);
-//       const blob = await response.blob();
-//       const file = new File([blob], 'rick.jpg', {type: blob.type});
-
-//       await navigator.share({
-//         url: shareurl,
-//         title: sharetitle,
-//         text: sharetext,
-//         files: [file]
-//       });
-//     } catch (err) {
-//       console.log(err.name, err.message);
-//     }
-//   };
     fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
   .then(function(response) {
     return response.blob()
@@ -107,7 +90,7 @@ function mobileShare2() {
         files: filesArray,
         title: 'No Title',
         url: 'https://sumitj0695.github.io/Covid/'
-      });
+      })
           .then(() => console.log("Share was successful."))
           .catch((error) => console.log("Sharing failed", error));
     }
@@ -116,22 +99,31 @@ function mobileShare2() {
       }
   }
 }
-        
-async function shareNow() {
-  let imageResponse = await window.fetch('https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png');
-  let imageBuffer = await imageResponse.arrayBuffer();
-  let fileArray = [new File([imageBuffer], "File Name", {
-    type: "image/png",
-    lastModified: Date.now()
-  })];
-  if(window.navigator && window.navigator.canShare && window.navigator.canShare({files: fileArray})){
-    navigator.share({
-      files: fileArray,
-      title: 'Title',
-      text: 'Text to show'
-    }).then(() => {
-      console.log('Thanks for sharing!');
-    })
-    .catch(console.error);
+
+function shareNow() {
+        fetch("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
+  .then(function(response) {
+    return response.arrayBuffer()
+  })
+  .then(function(fileBuffer) {
+
+    var file = new File([fileBuffer], "File Name", {type: 'image/png'});
+    var filesArray = [file];
+
+    if(navigator.canShare && navigator.canShare({ files: filesArray })) {
+      navigator.share({
+        text: 'Hey',
+        files: filesArray,
+        title: 'No Title',
+        url: 'https://sumitj0695.github.io/Covid/'
+      })
+          .then(() => console.log("Share was successful."))
+          .catch((error) => console.log("Sharing failed", error));
+    }
+       else {
+        console.log("Your system doesn't support sharing files.");
+      }
   }
 }
+
+        
