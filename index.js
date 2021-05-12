@@ -52,70 +52,20 @@ function Cowin() {
     }
 }
 
-function whatsappShare(image) {
-
-}
-
-function mobileShare() {
-  if ( navigator.share ) {
-
-    // share button click handler
-    document.getElementById('simpleshare').addEventListener('click', () => {
-  
-      // share page information
-      navigator.share({
-        url: 'https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg',
-        title: 'Title',
-        text: 'Text.'
-      });
-  
-    });
-  
-  }
-}
-
-function mobileShare2() {
-    fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
-  .then(function(response) {
-    return response.blob()
-  })
-  .then(function(blob) {
-
-    var file = new File([blob], "https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg", {type: 'blob.type'});
-    var filesArray = [file];
-
-    if(navigator.canShare && navigator.canShare({ files: filesArray })) {
-      navigator.share({
-        text: 'Hey',
-        files: filesArray,
-        title: 'No Title',
-        url: 'https://sumitj0695.github.io/Covid/'
-      })
-          .then(() => console.log("Share was successful."))
-          .catch((error) => console.log("Sharing failed", error));
-    }
-       else {
-        console.log("Your system doesn't support sharing files.");
-      }
-  });
-}
-
-function shareNow() {
-        fetch("images/Covid_Care.png")
+function shareNow(fileName) {
+        fetch("images/" + fileName)
   .then(function(response) {
     return response.arrayBuffer()
   })
   .then(function(fileBuffer) {
 
-    var file = new File([fileBuffer], "Covid_Care.png", {type: 'image/png'});
+    var file = new File([fileBuffer], fileName, {type: fileBuffer.type});
     var filesArray = [file];
             console.log("filesArray", filesArray);
 
     if(navigator.canShare && navigator.canShare({ files: filesArray })) {
       navigator.share({
-        text: 'Hey',
         files: filesArray,
-        title: 'No Title',
         url: 'https://sumitj0695.github.io/Covid/'
       })
           .then(() => console.log("Share was successful."))
