@@ -107,7 +107,7 @@ function shareNow() {
   })
   .then(function(fileBuffer) {
 
-    var file = new File([fileBuffer], "File Name", {type: 'image/jpeg'});
+    var file = new File([fileBuffer], "logo.jpg", {type: 'image/jpeg'});
     var filesArray = [file];
             console.log("filesArray", filesArray);
 
