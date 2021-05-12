@@ -59,7 +59,7 @@ function shareNow(fileName) {
   })
   .then(function(fileBuffer) {
 
-    var file = new File([fileBuffer], fileName, {type: fileBuffer.type});
+    var file = new File([fileBuffer], fileName, {type: "image/png"});
     var filesArray = [file];
             console.log("filesArray", filesArray);
 
