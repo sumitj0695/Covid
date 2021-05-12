@@ -101,7 +101,7 @@ function mobileShare2() {
 }
 
 function shareNow() {
-        fetch("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
+        fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
   .then(function(response) {
     return response.arrayBuffer()
   })
