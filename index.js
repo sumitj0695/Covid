@@ -101,13 +101,13 @@ function mobileShare2() {
 }
 
 function shareNow() {
-        fetch("https://khatabook-assets.s3.amazonaws.com/static/images/index/logo.jpg")
+        fetch("images/Covid_Care.png")
   .then(function(response) {
     return response.arrayBuffer()
   })
   .then(function(fileBuffer) {
 
-    var file = new File([fileBuffer], "logo.jpg", {type: 'image/jpeg'});
+    var file = new File([fileBuffer], "Covid_Care.png", {type: 'image/png'});
     var filesArray = [file];
             console.log("filesArray", filesArray);
 
