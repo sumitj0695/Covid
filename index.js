@@ -1,17 +1,17 @@
 let shareButton=document.getElementById("simpleshare");
 let result=document.getElementById("result");
 // console.log(shareButton);
-shareButton.addEventListener("click",onShare)
-function onShare() {
-  // ...
-  if (navigator.share) {
-  //Your code here
-  result.innerHTML="supported !!";
-  } else {
-    alert(`Not supported !!`);
-    result.innerHTML="Not supported !!";
-  }
- }
+// shareButton.addEventListener("click",onShare)
+// function onShare() {
+//   // ...
+//   if (navigator.share) {
+//   //Your code here
+//   result.innerHTML="supported !!";
+//   } else {
+//     alert(`Not supported !!`);
+//     result.innerHTML="Not supported !!";
+//   }
+//  }
 
 
 
