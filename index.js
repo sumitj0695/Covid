@@ -97,7 +97,7 @@ function mobileShare2() {
        else {
         console.log("Your system doesn't support sharing files.");
       }
-  }
+  });
 }
 
 function shareNow() {
@@ -123,7 +123,7 @@ function shareNow() {
        else {
         console.log("Your system doesn't support sharing files.");
       }
-  }
+  });
 }
 
         
